@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, Html } from "@react-three/drei";
 import "./styles.css";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://oceanvision3d.onrender.com";
 
 function latLonToXYZ(lat, lon, radius=2.02) {
   const phi = (90-lat) * Math.PI/180;
