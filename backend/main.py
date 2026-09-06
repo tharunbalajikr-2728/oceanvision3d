@@ -1,17 +1,20 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from math import sin, cos, radians
-from typing import Optional
+
 
 app = FastAPI(title="OceanVision 3D API", version="1.0.0")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
+    allow_origins=[
+        "https://oceanvision3d-q3j8.vercel.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 
 stations = [
     {"id":"ST001","name":"Bay of Bengal North","lat":12.25,"lon":82.45,"depth":10,"temperature":28.4,"salinity":34.8,"current_speed":0.82},
